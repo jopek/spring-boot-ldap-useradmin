@@ -20,7 +20,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.ldap.core.support.BaseLdapNameAware;
 import org.springframework.ldap.samples.useradmin.domain.*;
 import org.springframework.ldap.support.LdapNameBuilder;

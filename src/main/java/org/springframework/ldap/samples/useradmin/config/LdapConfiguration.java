@@ -7,9 +7,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.LdapContextSource;
-import org.springframework.ldap.repository.support.SimpleLdapRepository;
-import org.springframework.ldap.samples.useradmin.domain.User;
-import org.springframework.ldap.samples.useradmin.domain.UserRepo;
 
 /**
  * Created with IntelliJ IDEA.

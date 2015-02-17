@@ -17,13 +17,11 @@
 package org.springframework.ldap.samples.useradmin.domain.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.ldap.core.AttributesMapper;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.BaseLdapNameAware;
 import org.springframework.ldap.query.LdapQuery;
 import org.springframework.ldap.samples.useradmin.domain.Group;
-import org.springframework.ldap.samples.useradmin.domain.GroupRepo;
 import org.springframework.ldap.samples.useradmin.domain.GroupRepoExtension;
 import org.springframework.ldap.support.LdapUtils;
 import org.springframework.stereotype.Component;
@@ -52,7 +50,8 @@ public class GroupRepoImpl implements GroupRepoExtension, BaseLdapNameAware {
     this.ldapTemplate = ldapTemplate;
   }
 
-  public GroupRepoImpl(){}
+  public GroupRepoImpl() {
+  }
 
   @Override
   public void setBaseLdapPath(LdapName baseLdapPath) {
