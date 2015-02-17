@@ -27,7 +27,7 @@
     <ldap:context-source id="contextSource"
                          password="${sample.ldap.password}"
                          url="${sample.ldap.url}"
-                         username="${sample.ldap.userDn}"
+                         username="${sample.ldap.user}"
                          base="${sample.ldap.base}" />
 
     <ldap:ldap-template id="ldapTemplate" context-source-ref="contextSource"/>
