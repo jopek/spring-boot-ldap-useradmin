@@ -1,6 +1,5 @@
-user-admin.iml
+*.iml
 build/
 .idea
-user-admin.iml
 .gradle
 target
