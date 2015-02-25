@@ -9,8 +9,10 @@ import org.springframework.context.annotation.ImportResource;
 @ComponentScan
 @ImportResource("applicationContext.xml")
 public class Application {
+
   public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
   }
+
 }
 

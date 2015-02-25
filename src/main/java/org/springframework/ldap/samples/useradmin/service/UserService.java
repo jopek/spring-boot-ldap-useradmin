@@ -20,6 +20,7 @@ import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ldap.core.support.BaseLdapNameAware;
 import org.springframework.ldap.samples.useradmin.domain.*;
 import org.springframework.ldap.support.LdapNameBuilder;
@@ -39,10 +40,12 @@ import java.util.Set;
 public class UserService implements BaseLdapNameAware {
   @Autowired
   private UserRepo userRepo;
+
   @Autowired
   private GroupRepo groupRepo;
 
   private LdapName baseLdapPath;
+
   private DirectoryType directoryType;
 
   @Autowired

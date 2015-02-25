@@ -23,6 +23,7 @@ import org.springframework.ldap.core.NameClassPairMapper;
 import org.springframework.ldap.samples.useradmin.domain.DepartmentRepo;
 import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.ldap.support.LdapUtils;
+import org.springframework.stereotype.Service;
 
 import javax.naming.NameClassPair;
 import javax.naming.NamingException;
