@@ -21,11 +21,13 @@ repositories {
 
 
 dependencies {
-    compile "org.springframework.boot:spring-boot-starter-web:1.2.1.RELEASE",
+    compile "org.springframework.boot:spring-boot-starter-web",
             'org.springframework.ldap:spring-ldap-core:2.0.2.RELEASE',
             'org.springframework:spring-tx',
             'com.fasterxml.jackson.core:jackson-databind:2.2.3',
             'com.google.guava:guava:15.0'
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+
 
     runtime 'ch.qos.logback:logback-classic:1.0.13'
 }

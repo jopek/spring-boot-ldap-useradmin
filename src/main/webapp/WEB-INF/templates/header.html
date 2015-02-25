@@ -1,16 +1,16 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Spring LDAP User Admin</title>
-    <link rel="icon" type="image/x-icon" href="<c:url value='/resources/img/favicon.png'/>"/>
-    <link href="<c:url value='/resources/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet"/>
-    <link href="<c:url value='/resources/css/default.css'/>" rel="stylesheet"/>
-    <c:url var="jqueryUrl" value="/resources/jquery/jquery.min.js"/>
-    <script src="${jqueryUrl}"></script>
-    <c:url var="bootstrapJsUrl" value="/resources/bootstrap/js/bootstrap.min.js"/>
-    <script src="${bootstrapJsUrl}"></script>
-    <c:url var="underscoreJsUrl" value="/resources/underscore/underscore.min.js"/>
-    <script src="${underscoreJsUrl}"></script>
+    <link rel="icon" type="image/x-icon" href="/resources/img/favicon.png'"/>
+    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/resources/css/default.css" rel="stylesheet"/>
+    <script src="/resources/jquery/jquery.min.js"></script>
+    <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/resources/underscore/underscore.min.js"></script>
 
     <script type="text/javascript">
         var activeNav = ".users-nav";
@@ -20,6 +20,8 @@
         });
     </script>
 </head>
+
+
 <body>
 
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -34,10 +36,13 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="users-nav"><a href="<c:url value='/users'/>">Users</a></li>
-                <li class="groups-nav"><a href="<c:url value='/groups'/>">Groups</a></li>
+                <li class="users-nav"><a href="/users">Users</a></li>
+                <li class="groups-nav"><a href="/groups">Groups</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->
     </div>
 </div>
+</body>
+
+</html>

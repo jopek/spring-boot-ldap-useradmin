@@ -19,6 +19,8 @@ package org.springframework.ldap.samples.useradmin.service;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ldap.core.support.BaseLdapNameAware;
@@ -30,6 +32,7 @@ import org.springframework.stereotype.Component;
 import javax.naming.Name;
 import javax.naming.ldap.LdapName;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -44,17 +47,21 @@ public class UserService implements BaseLdapNameAware {
   @Autowired
   private GroupRepo groupRepo;
 
+  private static Logger LOG = LoggerFactory.getLogger(UserService.class);
+
   private LdapName baseLdapPath;
 
   private DirectoryType directoryType;
 
   @Autowired
   public UserService(UserRepo userRepo, GroupRepo groupRepo) {
+    LOG.info("UserService instanciated");
     this.userRepo = userRepo;
     this.groupRepo = groupRepo;
   }
 
   public Group getUserGroup() {
+    LOG.info("getUserGroup");
     return groupRepo.findByName(GroupRepo.USER_GROUP);
   }
 
@@ -68,10 +75,12 @@ public class UserService implements BaseLdapNameAware {
   }
 
   public Iterable<User> findAll() {
+    LOG.info("findAll");
     return userRepo.findAll();
   }
 
   public User findUser(String userId) {
+    LOG.info("findUser " + userId);
     return userRepo.findOne(LdapUtils.newLdapName(userId));
   }
 
@@ -101,6 +110,7 @@ public class UserService implements BaseLdapNameAware {
    * @return
    */
   public Set<User> findAllMembers(Iterable<Name> absoluteIds) {
+    LOG.info("findAllMembers");
     return Sets.newLinkedHashSet(userRepo.findAll(toRelativeIds(absoluteIds)));
   }
 
@@ -194,6 +204,7 @@ public class UserService implements BaseLdapNameAware {
   }
 
   public List<User> searchByNameName(String lastName) {
+    LOG.info("searchByNameName " + lastName);
     return userRepo.findByFullNameContains(lastName);
   }
 }
