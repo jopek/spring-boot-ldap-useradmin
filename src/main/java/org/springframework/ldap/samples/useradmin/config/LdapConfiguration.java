@@ -7,6 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.LdapContextSource;
+import org.springframework.ldap.repository.config.EnableLdapRepositories;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,10 +18,9 @@ import org.springframework.ldap.core.support.LdapContextSource;
  */
 
 @PropertySource("ldap.properties")
+@EnableLdapRepositories(basePackages = "org.springframework.ldap.samples.useradmin.domain")
 @Configuration
 public class LdapConfiguration {
-
-//  Logger LOG = LoggerFactory.getLogger(LdapConfiguration.class);
 
   @Autowired
   private Environment env;
