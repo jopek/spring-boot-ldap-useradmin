@@ -28,10 +28,10 @@ public class LdapConfiguration {
   @Bean
   public LdapContextSource contextSource() {
     LdapContextSource contextSource = new LdapContextSource();
-    contextSource.setUrl(env.getRequiredProperty("sample.ldap.url"));
-    contextSource.setBase(env.getRequiredProperty("sample.ldap.base"));
-    contextSource.setUserDn(env.getRequiredProperty("sample.ldap.user"));
-    contextSource.setPassword(env.getRequiredProperty("sample.ldap.password"));
+    contextSource.setUrl(env.getRequiredProperty("ldap.url"));
+    contextSource.setBase(env.getRequiredProperty("ldap.base"));
+    contextSource.setUserDn(env.getRequiredProperty("ldap.user"));
+    contextSource.setPassword(env.getRequiredProperty("ldap.password"));
     return contextSource;
   }
 
