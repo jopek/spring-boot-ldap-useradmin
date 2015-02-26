@@ -8,7 +8,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.devbliss.gpullr" level="debug" />
+    <logger name="org.springframework.ldap.core.LdapTemplate" level="debug" />
 
     <root level="info">
         <appender-ref ref="STDOUT"/>

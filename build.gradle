@@ -37,3 +37,9 @@ task wrapper(type: Wrapper) {
     distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }
 
+bootRun {
+    if (System.getProperty('DEBUG', 'false') == 'true') {
+        jvmArgs '-Xdebug',
+                '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005'
+    }
+}
