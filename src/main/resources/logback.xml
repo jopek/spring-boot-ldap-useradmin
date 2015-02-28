@@ -9,6 +9,7 @@
     </appender>
 
     <logger name="org.springframework.ldap.core.LdapTemplate" level="debug" />
+    <logger name="org.springframework.ldap.support.LdapUtils    " level="debug" />
 
     <root level="info">
         <appender-ref ref="STDOUT"/>

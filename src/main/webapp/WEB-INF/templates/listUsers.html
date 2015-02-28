@@ -27,7 +27,7 @@
         </div>
 
         <div th:each="user : ${users}" varStatus="stat" class="row row-${stat.index % 2}">
-            <div class="col-md-11" th:text="${user.fullName} - ${user.department}">&nbsp;</div>
+            <div class="col-md-11" th:text="${user.fullName} + ' - ' + ${user.department}">&nbsp;</div>
             <div class="col-md-1"><a href="/users/${user.id}">Edit</a></div>
         </div>
 
