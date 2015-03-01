@@ -18,7 +18,6 @@ public class NameSerializer extends JsonSerializer<Name> {
 
   @Override
   public void serialize(Name value, JsonGenerator jgen, SerializerProvider provider) throws IOException, JsonProcessingException {
-    LOG.info("custom JsonSerializer<Name> is being used!");
     jgen.writeString(value.toString());
   }
 

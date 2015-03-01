@@ -30,7 +30,7 @@ public final class User {
   private Name id;
 
   @Attribute(name = "cn")
-  @DnAttribute(value = "cn", index = 3)
+//  @DnAttribute(value = "cn", index = 3)
   private String fullName;
 
   @Attribute(name = "employeeNumber")
@@ -51,11 +51,11 @@ public final class User {
   @Attribute(name = "telephoneNumber")
   private String phone;
 
-  @DnAttribute(value = "ou", index = 2)
+//  @DnAttribute(value = "ou", index = 2)
   @Transient
   private String unit;
 
-  @DnAttribute(value = "ou", index = 1)
+//  @DnAttribute(value = "ou", index = 1)
   @Transient
   private String department;
 
