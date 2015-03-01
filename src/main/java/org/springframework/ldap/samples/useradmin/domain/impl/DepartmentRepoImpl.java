@@ -17,13 +17,12 @@
 package org.springframework.ldap.samples.useradmin.domain.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.NameClassPairMapper;
 import org.springframework.ldap.samples.useradmin.domain.DepartmentRepo;
 import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.ldap.support.LdapUtils;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import javax.naming.NameClassPair;
 import javax.naming.NamingException;
@@ -35,7 +34,7 @@ import java.util.Map;
 /**
  * @author Mattias Hellborg Arthursson
  */
-@Configuration
+@Component
 public class DepartmentRepoImpl implements DepartmentRepo {
 
   private static final LdapName DEPARTMENTS_OU = LdapUtils.newLdapName("ou=Departments");
@@ -66,8 +65,8 @@ public class DepartmentRepoImpl implements DepartmentRepo {
   }
 
   private List<String> getAllUnitsForDepartment(String department) {
-    return ldapTemplate.list(LdapNameBuilder
-                                 .newInstance(DEPARTMENTS_OU).add("ou", department).build(), new OuValueNameClassPairMapper());
+    return ldapTemplate.list(LdapNameBuilder.newInstance(DEPARTMENTS_OU).add("ou", department).build(),
+        new OuValueNameClassPairMapper());
   }
 
   private static class OuValueNameClassPairMapper implements NameClassPairMapper<String> {

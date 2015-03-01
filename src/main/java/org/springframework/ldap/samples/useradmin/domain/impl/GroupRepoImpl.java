@@ -60,10 +60,7 @@ public class GroupRepoImpl implements GroupRepoExtension, BaseLdapNameAware {
 
   @Override
   public List<String> getAllGroupNames() {
-    LdapQuery query = query()
-                          .attributes("cn")
-                          .where("objectclass")
-                          .is("groupOfNames");
+    LdapQuery query = query().attributes("cn").where("objectclass").is("groupOfNames");
 
     return ldapTemplate.search(query, new AttributesMapper<String>() {
       @Override

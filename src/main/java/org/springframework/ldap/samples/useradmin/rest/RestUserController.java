@@ -69,9 +69,15 @@ public class RestUserController {
        return userList;
      }
   }
+
   @RequestMapping(value = "/users/{userid}", method = GET)
   public User getUser(@PathVariable String userid) {
     return userService.findUser(userid);
+  }
+
+  @RequestMapping(value = "/users/uid/{uid}", method = GET)
+  public User getUserByUid(@PathVariable Integer uid) {
+    return userService.findUserByUid(uid);
   }
 
   @RequestMapping(value = "/departments", method = GET)

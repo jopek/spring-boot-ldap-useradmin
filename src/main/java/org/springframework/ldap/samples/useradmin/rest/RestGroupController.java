@@ -16,22 +16,15 @@
 
 package org.springframework.ldap.samples.useradmin.rest;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.ldap.samples.useradmin.domain.Group;
 import org.springframework.ldap.samples.useradmin.domain.GroupRepo;
-import org.springframework.ldap.samples.useradmin.domain.User;
 import org.springframework.ldap.samples.useradmin.service.UserService;
 import org.springframework.ldap.support.LdapUtils;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
@@ -49,7 +42,7 @@ public class RestGroupController {
   private UserService userService;
 
   @RequestMapping(value = "/groups", method = GET)
-  public List<String> listGroups(ModelMap map) {
+  public List<String> listGroups() {
     return groupRepo.getAllGroupNames();
   }
 
