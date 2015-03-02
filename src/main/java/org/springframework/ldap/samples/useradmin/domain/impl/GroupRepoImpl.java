@@ -40,7 +40,6 @@ import static org.springframework.ldap.query.LdapQueryBuilder.query;
 public class GroupRepoImpl implements GroupRepoExtension, BaseLdapNameAware {
   private final static LdapName ADMIN_USER = LdapUtils.newLdapName("cn=System,ou=System,ou=IT,ou=Departments");
 
-  @Autowired
   private LdapTemplate ldapTemplate;
 
   private LdapName baseLdapPath;

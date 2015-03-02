@@ -39,7 +39,6 @@ public class DepartmentRepoImpl implements DepartmentRepo {
 
   private static final LdapName DEPARTMENTS_OU = LdapUtils.newLdapName("ou=Departments");
 
-  @Autowired
   private LdapTemplate ldapTemplate;
 
   @Autowired
